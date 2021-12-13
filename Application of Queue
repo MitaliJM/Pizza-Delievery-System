@@ -1,0 +1,205 @@
+import java.util.Scanner;
+
+class Queue{
+	int front=0,rear=0;                     
+	int max_size=10;
+	String size[] = new String[max_size];    //declaring array for size of pizza
+	String pizza_name[] = new String[max_size];      //declaring array for name of pizza
+	int price[] = new int[max_size];        //declaring array for price of pizza
+	Scanner sc = new Scanner(System.in);
+	
+	public boolean isFull() {        //function to check whether the queue is full or not
+		if(rear==max_size) {
+			return true;
+		}
+		else
+			return false;
+	}
+	public boolean isEmpty() {         //function to check whether the queue is empty or not
+		if(front < 0 || front > rear) {
+			return true;
+		}
+		else 
+			return false;
+	}
+	void Place_Order() {            //function to place order of pizza
+		if(isFull()) {
+			System.out.println("You can not place order, Because it is full!!");
+		}
+		else
+			
+		   System.out.println("***Pizza Menu***");
+		   System.out.println("1) Farm_House \n 2) Peppy_Paneer \n 3) Mexican_Green_Wave \n 4) Deluxe_Veggie \n 5) Veg_Extravaganza");
+		   System.out.println("How many pizza you want to order??");      //taking user input of number of pizza to be ordered
+		   int num = sc.nextInt();
+		   for(int i=0; i<num; i++) {
+		   System.out.println("Enter the name of pizza you want to order: ");
+	       pizza_name[rear] = sc.next();   //storing the entered details in the array of size, price and pizza name
+	       System.out.println("Enter the size of pizza you want to order: ");
+	       size[rear] = sc.next();
+	       System.out.println("Enter the price of the pizza: ");
+	       price[rear] = sc.nextInt();
+		   rear++;             //incrementing rear after placing order of each pizza
+		   System.out.println("Order is placed!!");
+		   }
+	}
+	void Deliver_Order() {               //function to deliver order of pizza
+		if(isEmpty()) {
+			System.out.println("You can not deliver the order, Because it is empty!!");
+		}
+		else
+			System.out.println("Name of ordered pizza: " +pizza_name[front]);
+		    System.out.println("Size of ordered pizza: " +size[front]);
+		    System.out.println("Price of ordered pizza: " +price[front]);
+			front++;         //increamenting front after delivering order of each pizza
+		    System.out.println("Order Delivered!!");
+	}
+	void display() {               //function to display list of details of ordered pizza
+		if(isEmpty()) {
+			System.out.println("Queue is Empty");
+		}
+		else
+			for(int i = front; i<rear; i++) {          //loop for traversing the queue
+				System.out.println("**Order No:" +(i+1));
+				System.out.println("Name of Ordered pizza: " +pizza_name[i]);
+				System.out.println("Size of Ordered pizza: " +size[i]);
+				System.out.println("Price of ordered pizza " +price[i]+".Rs" );
+				System.out.println();
+			}
+	}
+}
+public class Queue_Implementation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+	       int ch;
+	       Queue q = new Queue();   //creating object of class Queue
+	      do {
+	    	  System.out.println("**Queue Operations**");
+	    	   System.out.println(" 1. Place an Order \n 2. Deliver an order \n 3. Display");
+	    	   System.out.println("Enter your choice: ");
+	    	   ch=sc.nextInt();
+	    	   switch(ch) {
+	    	   case 1:
+	    		   q.Place_Order();   //calling place_order function
+	    		   break;
+	    		   
+	    	   case 2:
+                   q.Deliver_Order();       //calling deliver_order function
+	    		   break;
+	    	   
+	    	   case 3:
+	    		   q.display();              //calling display function
+	    		   break;
+	    	
+	    	   default:
+	    		   System.out.println("Invalid Choice!!");
+	       }
+	    	   System.out.println("If you like to continue then press 1 or else 0");
+	    	   ch=sc.nextInt();
+	       }  while(ch==1);
+	      System.out.println("Thank You!!");
+	      System.out.println("Service is closed!!");
+	      
+		}
+
+	}
+
+/* OUTPUT:
+  **Queue Operations**
+ 1. Place an Order 
+ 2. Deliver an order 
+ 3. Display
+Enter your choice: 
+1
+***Pizza Menu***
+1) Farm_House 
+ 2) Peppy_Paneer 
+ 3) Mexican_Green_Wave 
+ 4) Deluxe_Veggie 
+ 5) Veg_Extravaganza
+How many pizza you want to order??
+3
+Enter the name of pizza you want to order: 
+Farm_House
+Enter the size of pizza you want to order: 
+Large
+Enter the price of the pizza: 
+499
+Order is placed!!
+Enter the name of pizza you want to order: 
+Peppy_Paneer
+Enter the size of pizza you want to order: 
+Medium
+Enter the price of the pizza: 
+399
+Order is placed!!
+Enter the name of pizza you want to order: 
+Mexican_Green_Wave
+Enter the size of pizza you want to order: 
+small
+Enter the price of the pizza: 
+249
+Order is placed!!
+If you like to continue then press 1 or else 0
+1
+  **Queue Operations**
+ 1. Place an Order 
+ 2. Deliver an order 
+ 3. Display
+Enter your choice: 
+3
+**Order No:1
+Name of Ordered pizza: Farm_House
+Size of Ordered pizza: Large
+Price of ordered pizza 499.Rs
+
+**Order No:2
+Name of Ordered pizza: Peppy_Paneer
+Size of Ordered pizza: Medium
+Price of ordered pizza 399.Rs
+
+**Order No:3
+Name of Ordered pizza: Mexican_Green_Wave
+Size of Ordered pizza: small
+Price of ordered pizza 249.Rs
+
+If you like to continue then press 1 or else 0
+1
+  **Queue Operations**
+ 1. Place an Order 
+ 2. Deliver an order 
+ 3. Display
+Enter your choice: 
+2
+Name of ordered pizza: Farm_House
+Size of ordered pizza: Large
+Price of ordered pizza: 499
+Order Delivered!!
+If you like to continue then press 1 or else 0
+1
+  **Queue Operations**
+ 1. Place an Order 
+ 2. Deliver an order 
+ 3. Display
+Enter your choice: 
+3
+**Order No:2
+Name of Ordered pizza: Peppy_Paneer
+Size of Ordered pizza: Medium
+Price of ordered pizza 399.Rs
+
+**Order No:3
+Name of Ordered pizza: Mexican_Green_Wave
+Size of Ordered pizza: small
+Price of ordered pizza 249.Rs
+
+If you like to continue then press 1 or else 0
+0
+Thank You!!
+Service is closed!!
+
+ */
+
+
