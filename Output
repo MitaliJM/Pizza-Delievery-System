@@ -1,0 +1,92 @@
+ **Queue Operations**
+ 1. Place an Order 
+ 2. Deliver an order 
+ 3. Display
+Enter your choice: 
+1
+***Pizza Menu***
+1) Farm_House 
+ 2) Peppy_Paneer 
+ 3) Mexican_Green_Wave 
+ 4) Deluxe_Veggie 
+ 5) Veg_Extravaganza
+How many pizza you want to order??
+3
+Enter the name of pizza you want to order: 
+Farm_House
+Enter the size of pizza you want to order: 
+Large
+Enter the price of the pizza: 
+499
+Order is placed!!
+Enter the name of pizza you want to order: 
+Peppy_Paneer
+Enter the size of pizza you want to order: 
+Medium
+Enter the price of the pizza: 
+399
+Order is placed!!
+Enter the name of pizza you want to order: 
+Mexican_Green_Wave
+Enter the size of pizza you want to order: 
+small
+Enter the price of the pizza: 
+249
+Order is placed!!
+If you like to continue then press 1 or else 0
+1
+  **Queue Operations**
+ 1. Place an Order 
+ 2. Deliver an order 
+ 3. Display
+Enter your choice: 
+3
+**Order No:1
+Name of Ordered pizza: Farm_House
+Size of Ordered pizza: Large
+Price of ordered pizza 499.Rs
+
+**Order No:2
+Name of Ordered pizza: Peppy_Paneer
+Size of Ordered pizza: Medium
+Price of ordered pizza 399.Rs
+
+**Order No:3
+Name of Ordered pizza: Mexican_Green_Wave
+Size of Ordered pizza: small
+Price of ordered pizza 249.Rs
+
+If you like to continue then press 1 or else 0
+1
+  **Queue Operations**
+ 1. Place an Order 
+ 2. Deliver an order 
+ 3. Display
+Enter your choice: 
+2
+Name of ordered pizza: Farm_House
+Size of ordered pizza: Large
+Price of ordered pizza: 499
+Order Delivered!!
+If you like to continue then press 1 or else 0
+1
+  **Queue Operations**
+ 1. Place an Order 
+ 2. Deliver an order 
+ 3. Display
+Enter your choice: 
+3
+**Order No:2
+Name of Ordered pizza: Peppy_Paneer
+Size of Ordered pizza: Medium
+Price of ordered pizza 399.Rs
+
+**Order No:3
+Name of Ordered pizza: Mexican_Green_Wave
+Size of Ordered pizza: small
+Price of ordered pizza 249.Rs
+
+If you like to continue then press 1 or else 0
+0
+Thank You!!
+Service is closed!!
